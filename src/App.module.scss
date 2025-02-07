@@ -68,3 +68,32 @@
 .read-the-docs {
   color: #888;
 } */
+
+/* ProductCarousel */
+.productCard {
+  text-align: center;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  cursor: pointer;
+}
+
+.productCard img {
+  width: 100%;
+  height: auto;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.productCard h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.productCard p {
+  color: #666;
+}
