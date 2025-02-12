@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import axios from 'axios';
 import { Product } from '../types';
 import styles from '../App.module.scss';
 
@@ -12,12 +13,10 @@ export const ProductCarousel = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://fakestoreapi.com/products');
-        if (!response.ok) {
-          throw new Error('Failed to fetch products');
-        }
-        const data: Product[] = await response.json();
-        setProducts(data);
+        const response = await axios.get<Product[]>(
+          'https://api.example.com/products'
+        );
+        setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
       } finally {
