@@ -1,0 +1,105 @@
+#root {
+  margin: 0 auto;
+}
+
+//====== ProductCard ↓ =========================
+
+.card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+  text-align: center;
+  margin: 10px;
+}
+
+.image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.name {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.currentPrice {
+  font-weight: bold;
+  color: #333;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 8px;
+}
+
+.colorSelector,
+.sizeSelector {
+  margin: 10px 0;
+}
+
+.colorOptions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.colorButton {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.colorButton.active {
+  outline: 2px solid #000;
+}
+
+.sizeSelector select {
+  padding: 4px;
+}
+
+.quantitySelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.quantitySelector button {
+  padding: 5px 10px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+}
+
+.addToCart {
+  width: 100%;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.addToCart:hover {
+  background: #333;
+}
+//======= ProductList ↓ =================
+
+.mainProducts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
