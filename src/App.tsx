@@ -1,4 +1,3 @@
-import styles from './App.module.scss';
 import { Layout } from './components/Layout';
 import { ProductCarousel } from './components/ProductCarusel';
 
