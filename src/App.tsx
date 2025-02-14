@@ -1,10 +1,12 @@
-import './App.module.scss';
+import { Layout } from './components/Layout';
+import { ProductCarousel } from './components/ProductCarusel';
 
 function App() {
   return (
-    <>
-      <h1>Vite + React</h1>
-    </>
+    <Layout>
+      <div>this is fucking children</div>
+      <ProductCarousel />
+    </Layout>
   );
 }
 
