@@ -6,4 +6,5 @@ body,
   box-sizing: border-box;
   height: 100%;
   font-family: Arial, sans-serif;
+  --primary-color: #fff;
 }

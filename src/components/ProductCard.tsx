@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useGetProductByIdQuery } from '../services/apiSlice';
-import styles from '../App.module.scss';
+import clsx from 'clsx';
+import styles from '../styles/ProductCard.module.scss';
 
 const AVAILABLE_COLORS = ['#000', '#ff69b4', '#ff0'];
 const AVAILABLE_SIZES = ['S', 'M', 'L', 'XL'];
@@ -14,11 +15,11 @@ export const ProductCard = () => {
   const { id } = useParams<{ id: string }>();
   const productId = id ? parseInt(id, 10) : null;
 
-  const {
-    data: product,
-    error,
-    isLoading,
-  } = useGetProductByIdQuery(productId!, { skip: !productId });
+  if (!productId) {
+    return <p>Product ID is invalid</p>;
+  }
+
+  const { data: product, error, isLoading } = useGetProductByIdQuery(productId);
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error loading product.</p>;
@@ -41,7 +42,9 @@ export const ProductCard = () => {
           {AVAILABLE_COLORS.map((color) => (
             <button
               key={color}
-              className={`${styles.colorButton} ${selectedColor === color ? styles.active : ''}`}
+              className={clsx(styles.colorButton, {
+                [styles.active]: selectedColor === color,
+              })}
               style={{ backgroundColor: color }}
               onClick={() => setSelectedColor(color)}
             />

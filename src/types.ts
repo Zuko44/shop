@@ -12,3 +12,7 @@ interface Rating {
   rate: number;
   count: number;
 }
+
+export interface ProductCardProps {
+  product: Product;
+}
